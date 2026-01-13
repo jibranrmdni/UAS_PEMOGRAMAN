@@ -1,0 +1,150 @@
+/* --- Konfigurasi Warna & Font Global --- */
+:root {
+    --primary-color: #2c3e50;    /* Navy Blue - Warna Utama */
+    --accent-color: #3498db;     /* Biru Terang - Aksen */
+    --bg-light: #f4f6f9;         /* Abu-abu sangat muda - Background */
+    --text-dark: #333333;
+    --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- Kustomisasi Halaman Login --- */
+/* Target body yang memiliki class bg-light dari file login.php */
+body.d-flex.align-items-center {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+}
+
+/* Card Login supaya melayang */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 2.5rem;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Input Form yang lebih modern */
+.form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Tombol Login */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Kustomisasi Tabel Data Barang --- */
+.table-responsive {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.table tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1faff;
+}
+
+/* Tombol Aksi (Edit/Hapus) */
+.btn-sm {
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* --- Pagination --- */
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    color: var(--primary-color);
+    border-radius: 5px;
+    margin: 0 3px;
+    border: none;
+    font-weight: 600;
+}
+
+.page-item.active .page-link {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* --- Pesan Alert --- */
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Responsive Mobile Tweaks --- */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .table thead {
+        display: none; /* Opsional: Sembunyikan header di HP jika ingin tampilan kartu */
+    }
+    
+    /* Membuat tabel scrollable tetap rapi */
+    .table-responsive {
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
